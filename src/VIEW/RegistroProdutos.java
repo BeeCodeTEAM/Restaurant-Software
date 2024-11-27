@@ -25,12 +25,12 @@ public class RegistroProdutos {
         // Criação de um painel principal com BoxLayout para organizar componentes verticalmente
         JPanel painelPrincipal = new JPanel();
         painelPrincipal.setLayout(new BoxLayout(painelPrincipal, BoxLayout.Y_AXIS));
-        painelPrincipal.setBorder(BorderFactory.createEmptyBorder(20, 50, 20, 50)); // Margens
+        painelPrincipal.setBorder(BorderFactory.createEmptyBorder(20, 50, 20, 50));
 
         // Campo para o nome do produto
         JLabel nomeLabel = new JLabel("Nome do Produto:");
         campoNome = new JTextField(20);
-        campoNome.setMaximumSize(new Dimension(Integer.MAX_VALUE, 30)); // Para ocupar toda a largura
+        campoNome.setMaximumSize(new Dimension(Integer.MAX_VALUE, 30));
 
         // Campo para a descrição do produto
         JLabel descricaoLabel = new JLabel("Descrição:");
@@ -85,7 +85,7 @@ public class RegistroProdutos {
                     // Cria um ImageIcon a partir do arquivo
                     ImageIcon imagemOriginal = new ImageIcon(arquivo.getAbsolutePath());
 
-                    // Redimensionando a imagem para um tamanho adequado (por exemplo, 130x130 pixels)
+                    // Redimensionando a imagem para um tamanho adequado
                     Image imagemRedimensionada = imagemOriginal.getImage().getScaledInstance(130, 130, Image.SCALE_SMOOTH);
 
                     // Criando um novo ImageIcon com a imagem redimensionada
