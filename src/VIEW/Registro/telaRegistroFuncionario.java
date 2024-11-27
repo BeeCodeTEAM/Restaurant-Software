@@ -1,4 +1,4 @@
-package VIEW;
+package VIEW.Registro;
 
 import DAO.FuncionarioDAO;
 import DTO.FuncionarioDTO;

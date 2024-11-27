@@ -1,4 +1,4 @@
-package VIEW;
+package VIEW.Registro;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -21,8 +21,6 @@ public class telaLoginInterface extends JPanel {
     JLabel labelSenha;
     JPanel jpnLogin = new JPanel();;
 
-
-
     static class Icone {
 
         Image img;
@@ -31,9 +29,6 @@ public class telaLoginInterface extends JPanel {
         }
 
     }
-
-
-
     Icone icone;
     Image iconeTop;
 

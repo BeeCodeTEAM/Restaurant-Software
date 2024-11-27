@@ -1,4 +1,4 @@
-package VIEW;
+package VIEW.Cardapio;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,10 +10,14 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class RegistroProdutos {
 
     private JFrame janelaRegistro;
-    private JTextField campoNome;
+    public JTextField campoNome;
     private JTextArea campoDescricao;
     private JLabel labelFoto;
     private Icon iconeProduto;
+
+    public String getDescricao() {
+        return campoDescricao.getText(); // Retorna o texto do JTextArea
+    }
 
     // Agora, vamos receber uma referência para CardapioInterface
     public RegistroProdutos(CardapioInterface cardapioInterface, JPanel painelProdutos) {
@@ -21,6 +25,7 @@ public class RegistroProdutos {
         janelaRegistro = new JFrame("Registrar Produto");
         janelaRegistro.setBounds(500, 500, 800, 550);
         janelaRegistro.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        janelaRegistro.setLocationRelativeTo(null);
 
         // Criação de um painel principal com BoxLayout para organizar componentes verticalmente
         JPanel painelPrincipal = new JPanel();
@@ -98,6 +103,8 @@ public class RegistroProdutos {
             }
         });
 
+
+
         // Ação para salvar o produto
         botaoSalvar.addActionListener(new ActionListener() {
             @Override
@@ -112,6 +119,12 @@ public class RegistroProdutos {
                     janelaRegistro.dispose(); // Fecha a janela de registro
                 }
             }
+
         });
+
+    }
+
+    public RegistroProdutos() {
+
     }
 }

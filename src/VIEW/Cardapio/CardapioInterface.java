@@ -1,9 +1,11 @@
-package VIEW;
+package VIEW.Cardapio;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 
@@ -42,13 +44,65 @@ public class CardapioInterface {
         painelProdutos.setLayout(new FlowLayout(FlowLayout.LEFT, 15, 15));
         painelProdutos.setBounds(30, 100, 730, 250); // Posição e tamanho do painel de produtos
 
+        ImageIcon imagemCarrinho = new ImageIcon("C:\\Users\\Gusta\\Desktop\\DsProject\\Restaurant-Software\\src\\VIEW\\Cardapio\\carrinhoImagem.png");
+
+        Image imagemRedimensionada = imagemCarrinho.getImage().getScaledInstance(90, 90, Image.SCALE_SMOOTH);
+
+        Icon carrinhoIcon = new ImageIcon(imagemRedimensionada);
+
+
+        JButton botaoCarrinho = new JButton(carrinhoIcon);
+        botaoCarrinho.setBounds(20, 20  , 90, 90);
+//        botaoCarrinho.setLayout(null);
+        botaoCarrinho.setCursor(new Cursor(Cursor.HAND_CURSOR));
+       botaoCarrinho.setContentAreaFilled(false);
+        botaoCarrinho.setBorder(BorderFactory.createEmptyBorder());
+
+
+
+
         // Adicionando componentes à interface
         interfaceMenu.add(textCardapio);
         interfaceMenu.add(botaoRegistrarProduto);
         interfaceMenu.add(painelProdutos);
+        interfaceMenu.add(botaoCarrinho);
 
         // Exibir a interface
         interfaceMenu.setVisible(true);
+
+        painelProdutos.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                balaoCarrinho informaçõesProduto = new balaoCarrinho();
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        });
+
+        botaoCarrinho.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
 
         // Ação do botão para registrar um produto
         botaoRegistrarProduto.addActionListener(new ActionListener() {
@@ -82,9 +136,16 @@ public class CardapioInterface {
         JPanel painelProdutos = (JPanel) interfaceMenu.getContentPane().getComponent(2);  // Encontrando o painel de produtos
         painelProdutos.add(painelProduto);
 
+
+
+
+
         // Atualizando a interface
         interfaceMenu.revalidate();  // Força a atualização da interface
         interfaceMenu.repaint();     // Força o redesenho da interface
+
+
+
     }
 
     public static void main(String[] args) {

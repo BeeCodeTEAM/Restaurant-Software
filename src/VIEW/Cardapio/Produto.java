@@ -1,4 +1,4 @@
-package VIEW;
+package VIEW.Cardapio;
 
 import javax.swing.*;
 import java.awt.*;

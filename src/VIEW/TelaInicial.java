@@ -1,5 +1,9 @@
 package VIEW;
 
+import VIEW.Cardapio.CardapioInterface;
+import VIEW.Registro.telaLoginInterface;
+import VIEW.Registro.telaRegistro;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,8 +15,6 @@ import javax.swing.JLabel;
 public class TelaInicial {
 
     JFrame telaInicial1 = new JFrame("TelaInicial");
-
-
 
         public TelaInicial() {
             telaInicial1.setBounds(500, 500, 800, 550);
@@ -61,7 +63,7 @@ public class TelaInicial {
             btCardapio.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    telaInicial1.setVisible(false);
+                   CardapioInterface cardapio = new CardapioInterface();
 
                 }
             });
@@ -70,9 +72,6 @@ public class TelaInicial {
             telaInicial1.add(btRegistro);
             telaInicial1.add(textoInicial);
             telaInicial1.setVisible(true);
-
-
-
 
         }
 
