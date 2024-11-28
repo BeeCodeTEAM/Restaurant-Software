@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.UIManager;
 
 public class RegistroProdutos {
 
@@ -15,8 +16,15 @@ public class RegistroProdutos {
     private JLabel labelFoto;
     private Icon iconeProduto;
 
-    // Agora, vamos receber uma referência para CardapioInterface
+    
     public RegistroProdutos(CardapioInterface cardapioInterface, JPanel painelProdutos) {
+        try {
+            // Define o Look and Feel para o estilo nativo do sistema operacional
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         // Inicializa a janela de registro
         janelaRegistro = new JFrame("Registrar Produto");
         janelaRegistro.setBounds(500, 500, 800, 550);
@@ -115,3 +123,4 @@ public class RegistroProdutos {
         });
     }
 }
+

@@ -20,7 +20,7 @@ public class UsuarioDAO {
 
         try {
             // Dentro dessa string esta o comando que sera enviado ao banco de dados 
-            String sql = "select * from loginUsuario where nome_usuario = ? and senha_usuario = ?";
+            String sql = "select * from usuario where nome_usuario = ? and senha_usuario = ?";
             PreparedStatement pspm = conn.prepareStatement(sql);
 
             // O prmeiro parametro refere se ao primeiro ponto de interrogação 
@@ -43,7 +43,7 @@ public class UsuarioDAO {
     public Boolean RegistrarUsuario(UsuarioDTO novoUsuarioDTO) {
 
         Connection conn = null;
-        String sql = "INSERT INTO loginUsuario(nome_usuario, senha_usuario) VALUES ( ?, ?)";
+        String sql = "INSERT INTO usuario(nome_usuario, senha_usuario) VALUES ( ?, ?)";
         PreparedStatement pstm = null;
 
         try {

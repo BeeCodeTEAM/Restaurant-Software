@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 public class ConexaoDAO {
 
-    private static final String url = "jdbc:mysql://localhost:3306/GeralDatabase?user=root&password=";
+    private static final String url = "jdbc:mysql://localhost:3306/BeeFood?user=root&password=";
 
  
     public Connection conectaBD() {
